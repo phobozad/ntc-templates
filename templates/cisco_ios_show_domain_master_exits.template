@@ -1,0 +1,8 @@
+Value BR_ADDRESS (\d+?\.\d+?\.\d+?\.\d+?)
+Value NAME (\S+)
+Value PATH (\S+)
+
+Start
+  ^(\s*)BR address:(\s+)${BR_ADDRESS}(\s+)\|(\s+)Name:(\s+)${NAME}(\s+)\|(\s+)type:(\s+)(\S+)(\s+)\|(\s+)Path:(\s+)${PATH}(\s+)\|(\s+)path-id:(\s+)(\S+)(\s+)\|(\s+)PLR TCs:(\s+)(\S+)(\s*)$$ -> Record
+
+EOF

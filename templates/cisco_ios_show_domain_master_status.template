@@ -1,13 +1,17 @@
-Value Filldown
-
-Value Filldown INTERFACE ([a-zA-Z0-9_]+)
-Value PEER_ADDRESS ([0-9A-Fa-f:\.]+)
-Value TUNNEL_ADDRESS ([0-9A-Fa-f:\.]+)
-Value STATE (\S+)
-
+Value INSTANCE_TYPE (\S+)
+Value OPERATIONAL_STATUS (\S+)
+Value CONFIGURED_STATUS (\S+)
+Value LOOPBACK_IP (\d+?\.\d+?\.\d+?\.\d+?)
+Value TRANSIT_SITE_AFFINITY (\S+)
+Value MINIMUM_REQUIREMENT (\S+)
 
 Start
-  ^Interface:[ ]${INTERFACE}
-  ^\s+\d+[ ]${PEER_ADDRESS}\s+${TUNNEL_ADDRESS}\s+${STATE} -> Record
+  ^(\s*)Instance Type:(\s+)${INSTANCE_TYPE}(\s*)$$
+  ^(\s*)Operational status:(\s+)${OPERATIONAL_STATUS}(\s*)$$
+  ^(\s*)Configured status:(\s+)${CONFIGURED_STATUS}(\s*)$$
+  ^(\s*)Loopback IP Address:(\s+)${LOOPBACK_IP}(\s*)$$
+  ^(\s*)Transit Site Affinity:(\s+)${TRANSIT_SITE_AFFINITY}(\s*)$$
+  ^(\s*)Minimum Requirement:(\s+)${MINIMUM_REQUIREMENT}(\s*)$$ -> Record
+
 
 EOF

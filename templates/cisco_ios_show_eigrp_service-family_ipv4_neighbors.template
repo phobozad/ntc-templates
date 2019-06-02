@@ -1,0 +1,14 @@
+Value Filldown,Required AS (\d+)
+Value EIGRP_NEIGH (\d+?\.\d+?\.\d+?\.\d+?)
+Value INTERFACE (\S+)
+Value HOLDTIME (\d+)
+Value SRTT (\d+)
+Value RTO (\d+)
+Value QCNT (\d+)
+Value SEQNUM (\d+)
+
+Start
+  ^EIGRP-SFv4.*for AS\(${AS}\)\s*$$
+  ^\d+\s+${EIGRP_NEIGH}\s+${INTERFACE}\s+${HOLDTIME}\s+\S+\s+${SRTT}\s+${RTO}\s+${QCNT}\s+${SEQNUM}\s*$$ -> Record
+
+EOF
